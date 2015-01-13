@@ -8,10 +8,10 @@ echo "[MySQL Service Started]"
 
 if [ "$MYSQL_DATABASE" ]; then
 	echo "[Create Database $MYSQL_DATABASE]"
-	mysql -e "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; "
+	mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; "
 	if [ -r "$schemaSqlFile" ]; then
 		echo "[Init Database $MYSQL_DATABASE from file $schemaSqlFile ...]"  
-		mysql --database=$MYSQL_DATABASE < $schemaSqlFile
+		mysql -uroot -p$MYSQL_ROOT_PASSWORD --database=$MYSQL_DATABASE < $schemaSqlFile
 		if [ $? != 0 ]; then
 			exit -1;
 		fi

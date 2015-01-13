@@ -44,9 +44,13 @@ if [ ! -d "$DATADIR/mysql" -a "${1%_safe}" = '/run.sh' ]; then
 	fi
 	
 	echo 'FLUSH PRIVILEGES ;' >> "$tempSqlFile"
+	# 使用Service方式启动无法指定参数，不再拼接参数
+	#set -- "$@" --init-file="$tempSqlFile"
 	
-	set -- "$@" --init-file="$tempSqlFile"
+	# 使用Service方式启动无法指定参数，写到配置文件里
+	echo "init-file=/tmp/mysql-first-time.sql" >> /etc/mysql/my.cnf
 fi
 
 chown -R mysql:mysql "$DATADIR"
+
 exec "$@"
