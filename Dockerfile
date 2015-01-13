@@ -1,6 +1,6 @@
-MAINTAINER Guo Yukun, gyk001@gmail.com
-
 FROM debian:wheezy
+
+MAINTAINER Guo Yukun, gyk001@gmail.com
 
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
