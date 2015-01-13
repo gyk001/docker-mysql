@@ -37,9 +37,14 @@ RUN sed -Ei 's/^(bind-address|log)/#&/' /etc/mysql/my.cnf
 
 VOLUME /var/lib/mysql
 
+ENV EXT_SQL_FILE='/db-schema.sql'
+ENV EXT_SH_FILE='/after-db-init.sh'
+
 COPY docker-entrypoint.sh /entrypoint.sh
+#COPY docker-db-init.sql $EXT_SQL_FILE
+#COPY docker-after-db-init.sh $EXT_SH_FILE
 COPY docker-run.sh /run.sh
-COPY db-schema.sql /db-schema.sql
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 3306
