@@ -1,14 +1,10 @@
 # Supported tags and respective `Dockerfile` links
 
-- [`5.5.41`, `5.5` (*5.5/Dockerfile*)](https://github.com/docker-library/docker-mysql/blob/567028d4e177238c58760bcd69a8766a8f026e2a/5.5/Dockerfile)
-- [`5.6.22`, `5.6`, `5`, `latest` (*5.6/Dockerfile*)](https://github.com/docker-library/docker-mysql/blob/567028d4e177238c58760bcd69a8766a8f026e2a/5.6/Dockerfile)
-- [`5.7.5-m15`, `5.7.5`, `5.7` (*5.7/Dockerfile*)](https://github.com/docker-library/docker-mysql/blob/567028d4e177238c58760bcd69a8766a8f026e2a/5.7/Dockerfile)
+- [`5.6.22`, `5.6`, `5`, `latest` (*5.6/Dockerfile*)](https://github.com/gyk001/docker-mysql/blob/343eacba611c0c88233c1e754a83c1fc8afd7173/Dockerfile)
 
 For more information about this image and its history, please see the [relevant
 manifest file
-(`library/mysql`)](https://github.com/docker-library/official-images/blob/master/library/mysql)
-in the [`docker-library/official-images` GitHub
-repo](https://github.com/docker-library/official-images).
+(`docker-mysql`)](https://github.com/gyk001/docker-mysql/blob/master/)
 
 # What is MySQL?
 
